@@ -1,0 +1,542 @@
+[
+    {
+        "name": "Anesthesiology"
+    },
+    {
+        "name": "Dermatology"
+    },
+    {
+        "name": "Emergency medicine"
+    },
+    {
+        "name": "Family medicine"
+    },
+    {
+        "name": "Internal medicine"
+    },
+    {
+        "name": "Medical genetics"
+    },
+    {
+        "name": "Neurology"
+    },
+    {
+        "name": "Nuclear medicine"
+    },
+    {
+        "name": "Ophthalmology"
+    },
+    {
+        "name": "Pathology"
+    },
+    {
+        "name": "Pediatrics"
+    },
+    {
+        "name": "Preventive medicine"
+    },
+    {
+        "name": "Psychiatry"
+    },
+    {
+        "name": "Radiation oncology"
+    },
+    {
+        "name": "Surgery"
+    },
+    {
+        "name": "Urology"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Sleep medicine"
+    },
+    {
+        "name": "Dermatopathology"
+    },
+    {
+        "name": "Abdominal radiology"
+    },
+    {
+        "name": "Breast imaging"
+    },
+    {
+        "name": "Chest radiology"
+    },
+    {
+        "name": "Emergency radiology"
+    },
+    {
+        "name": "Neuroradiology"
+    },
+    {
+        "name": "Nuclear radiology"
+    },
+    {
+        "name": "Pediatric radiology"
+    },
+    {
+        "name": "Radiation oncology"
+    },
+    {
+        "name": "Medical toxicology"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Sports medicine"
+    },
+    {
+        "name": "Adolescent medicine"
+    },
+    {
+        "name": "Geriatric medicine"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Sleep medicine"
+    },
+    {
+        "name": "Sports medicine"
+    },
+    {
+        "name": "Gastroenterology"
+    },
+    {
+        "name": "Geriatric medicine"
+    },
+    {
+        "name": "Hematology"
+    },
+    {
+        "name": "Infectious disease"
+    },
+    {
+        "name": "Internal medicine"
+    },
+    {
+        "name": "Nephrology"
+    },
+    {
+        "name": "Oncology"
+    },
+    {
+        "name": "Pulmonary disease"
+    },
+    {
+        "name": "Rheumatology"
+    },
+    {
+        "name": "Sleep medicine"
+    },
+    {
+        "name": "Sports medicine"
+    },
+    {
+        "name": "Clinical genetics"
+    },
+    {
+        "name": "Child neurology"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Sleep medicine"
+    },
+    {
+        "name": "Vascular neurology"
+    },
+    {
+        "name": "Neuro-ophthalmology"
+    },
+    {
+        "name": "Ocular oncology"
+    },
+    {
+        "name": "Oculoplastics/orbit"
+    },
+    {
+        "name": "Retina/uveitis"
+    },
+    {
+        "name": "Chemical pathology"
+    },
+    {
+        "name": "Clinical pathology"
+    },
+    {
+        "name": "Cytopathology"
+    },
+    {
+        "name": "Forensic pathology"
+    },
+    {
+        "name": "Genetic pathology"
+    },
+    {
+        "name": "Hematology"
+    },
+    {
+        "name": "Immunopathology"
+    },
+    {
+        "name": "Molecular pathology"
+    },
+    {
+        "name": "Neuropathology"
+    },
+    {
+        "name": "Pediatric pathology"
+    },
+    {
+        "name": "Adolescent medicine"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Sports medicine"
+    },
+    {
+        "name": "Aerospace medicine"
+    },
+    {
+        "name": "Medical toxicology"
+    },
+    {
+        "name": "Forensic psychiatry"
+    },
+    {
+        "name": "Military psychiatry"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Hand surgery"
+    },
+    {
+        "name": "Ophthalmic surgery"
+    },
+    {
+        "name": "Orthopaedic trauma"
+    },
+    {
+        "name": "Otology neurotology"
+    },
+    {
+        "name": "Neonatal"
+    },
+    {
+        "name": "Prenatal"
+    },
+    {
+        "name": "Trauma"
+    },
+    {
+        "name": "Pediatric oncology"
+    },
+    {
+        "name": "Vascular surgery"
+    },
+    {
+        "name": "Pediatric urology"
+    },
+    {
+        "name": "Urologic oncology"
+    },
+    {
+        "name": "Renal transplant"
+    },
+    {
+        "name": "Male infertility"
+    },
+    {
+        "name": "Calculi"
+    },
+    {
+        "name": "Female urology"
+    },
+    {
+        "name": "Neurourology"
+    },
+    {
+        "name": "Anesthesiology"
+    },
+    {
+        "name": "Dermatology"
+    },
+    {
+        "name": "Emergency medicine"
+    },
+    {
+        "name": "Family medicine"
+    },
+    {
+        "name": "Internal medicine"
+    },
+    {
+        "name": "Medical genetics"
+    },
+    {
+        "name": "Neurology"
+    },
+    {
+        "name": "Nuclear medicine"
+    },
+    {
+        "name": "Ophthalmology"
+    },
+    {
+        "name": "Pathology"
+    },
+    {
+        "name": "Pediatrics"
+    },
+    {
+        "name": "Preventive medicine"
+    },
+    {
+        "name": "Psychiatry"
+    },
+    {
+        "name": "Radiation oncology"
+    },
+    {
+        "name": "Surgery"
+    },
+    {
+        "name": "Urology"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Sleep medicine"
+    },
+    {
+        "name": "Dermatopathology"
+    },
+    {
+        "name": "Abdominal radiology"
+    },
+    {
+        "name": "Breast imaging"
+    },
+    {
+        "name": "Chest radiology"
+    },
+    {
+        "name": "Emergency radiology"
+    },
+    {
+        "name": "Neuroradiology"
+    },
+    {
+        "name": "Nuclear radiology"
+    },
+    {
+        "name": "Pediatric radiology"
+    },
+    {
+        "name": "Radiation oncology"
+    },
+    {
+        "name": "Medical toxicology"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Sports medicine"
+    },
+    {
+        "name": "Adolescent medicine"
+    },
+    {
+        "name": "Geriatric medicine"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Sleep medicine"
+    },
+    {
+        "name": "Sports medicine"
+    },
+    {
+        "name": "Gastroenterology"
+    },
+    {
+        "name": "Geriatric medicine"
+    },
+    {
+        "name": "Hematology"
+    },
+    {
+        "name": "Infectious disease"
+    },
+    {
+        "name": "Internal medicine"
+    },
+    {
+        "name": "Nephrology"
+    },
+    {
+        "name": "Oncology"
+    },
+    {
+        "name": "Pulmonary disease"
+    },
+    {
+        "name": "Rheumatology"
+    },
+    {
+        "name": "Sleep medicine"
+    },
+    {
+        "name": "Sports medicine"
+    },
+    {
+        "name": "Clinical genetics"
+    },
+    {
+        "name": "Child neurology"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Sleep medicine"
+    },
+    {
+        "name": "Vascular neurology"
+    },
+    {
+        "name": "Neuro-ophthalmology"
+    },
+    {
+        "name": "Ocular oncology"
+    },
+    {
+        "name": "Oculoplastics/orbit"
+    },
+    {
+        "name": "Retina/uveitis"
+    },
+    {
+        "name": "Chemical pathology"
+    },
+    {
+        "name": "Clinical pathology"
+    },
+    {
+        "name": "Cytopathology"
+    },
+    {
+        "name": "Forensic pathology"
+    },
+    {
+        "name": "Genetic pathology"
+    },
+    {
+        "name": "Hematology"
+    },
+    {
+        "name": "Immunopathology"
+    },
+    {
+        "name": "Molecular pathology"
+    },
+    {
+        "name": "Neuropathology"
+    },
+    {
+        "name": "Pediatric pathology"
+    },
+    {
+        "name": "Adolescent medicine"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Sports medicine"
+    },
+    {
+        "name": "Aerospace medicine"
+    },
+    {
+        "name": "Medical toxicology"
+    },
+    {
+        "name": "Forensic psychiatry"
+    },
+    {
+        "name": "Military psychiatry"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Pain medicine"
+    },
+    {
+        "name": "Hand surgery"
+    },
+    {
+        "name": "Ophthalmic surgery"
+    },
+    {
+        "name": "Orthopaedic trauma"
+    },
+    {
+        "name": "Otology neurotology"
+    },
+    {
+        "name": "Neonatal"
+    },
+    {
+        "name": "Prenatal"
+    },
+    {
+        "name": "Trauma"
+    },
+    {
+        "name": "Pediatric oncology"
+    },
+    {
+        "name": "Vascular surgery"
+    },
+    {
+        "name": "Pediatric urology"
+    },
+    {
+        "name": "Urologic oncology"
+    },
+    {
+        "name": "Renal transplant"
+    },
+    {
+        "name": "Male infertility"
+    },
+    {
+        "name": "Calculi"
+    },
+    {
+        "name": "Female urology"
+    },
+    {
+        "name": "Neurourology"
+    }
+]
