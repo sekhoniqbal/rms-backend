@@ -28,23 +28,8 @@ public class RestExceptionHandler {
                 .stream().forEach(fieldError -> {
                     fieldErrors.put(fieldError.getField(), fieldError.getDefaultMessage());
                 });
-        return new ErrorResponse(fieldErrors, "form data contain errors");
+        return new ErrorResponse(fieldErrors, "form data contains errors");
     }
-
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ResponseBody
-    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
-    public Map<Object, Object> handleArgumentMismatchException(MethodArgumentTypeMismatchException ex,
-            WebRequest webRequest) {
-        Map<Object, Object> response = new HashMap<>();
-        response.put("timestamp", Instant.now());
-        response.put("message", ex.getMessage());
-        response.put("error", "bad request");
-        response.put("path", webRequest.getContextPath());
-
-        return response;
-    }
-
 }
 
 @Getter
