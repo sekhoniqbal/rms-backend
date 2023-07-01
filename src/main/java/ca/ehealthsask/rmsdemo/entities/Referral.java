@@ -18,12 +18,17 @@ public class Referral {
     @Setter(AccessLevel.NONE)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @ManyToOne
+    @JoinColumn(name = "patient_id", nullable = false)
     private Patient patient;
+
     @ManyToOne
     @JoinColumn(name = "provider_id", nullable = false)
     private Provider provider;
+
     @ManyToOne
+    @JoinColumn(name = "speciality_id", nullable = false)
     private Speciality speciality;
 
 }
