@@ -18,6 +18,8 @@ import org.springframework.web.server.ResponseStatusException;
 
 import ca.ehealthsask.rmsdemo.dtos.PatientDto;
 import ca.ehealthsask.rmsdemo.entities.Patient;
+import ca.ehealthsask.rmsdemo.entities.Referral;
+import ca.ehealthsask.rmsdemo.entities.Speciality;
 import ca.ehealthsask.rmsdemo.repositories.PatientRepository;
 
 @RestController
@@ -36,6 +38,13 @@ public class PatientController {
     public Patient getPatient(@PathVariable("id") Long id) {
         return patientRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Patient Not Found"));
+    }
+
+    @GetMapping("/{id}/referrals")
+    public List<Referral> getPatientReferrals(@PathVariable("id") Long id) {
+        return patientRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Patient Not Found"))
+                .getReferrals();
     }
 
     @PostMapping("")
@@ -58,9 +67,18 @@ public class PatientController {
     @DeleteMapping("/{id}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void deletePatient(@PathVariable("id") Long id) {
-        Patient patient = patientRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Patient Not Found"));
+        Patient patient = findPatientByIdOrThrow(id);
+        if (!patient.getReferrals().isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Cannot delete Patient: Patient has " + patient.getReferrals().size() + "referrals");
+        }
         patientRepository.delete(patient);
+    }
+
+    // helper
+    private Patient findPatientByIdOrThrow(Long id) {
+        return patientRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Patient Not Found"));
     }
 
 }
