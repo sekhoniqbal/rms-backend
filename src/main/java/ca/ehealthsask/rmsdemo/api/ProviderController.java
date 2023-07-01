@@ -18,6 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import ca.ehealthsask.rmsdemo.dtos.ProviderDto;
 import ca.ehealthsask.rmsdemo.entities.Provider;
+import ca.ehealthsask.rmsdemo.entities.Referral;
 import ca.ehealthsask.rmsdemo.entities.Speciality;
 import ca.ehealthsask.rmsdemo.repositories.ProviderRepository;
 import ca.ehealthsask.rmsdemo.repositories.SpecialityRepository;
@@ -41,6 +42,11 @@ public class ProviderController {
         return findProviderByIdOrThrow(id);
     }
 
+    @GetMapping("/{id}/referrals")
+    public List<Referral> getProviderReferrals(@PathVariable("id") Long id) {
+        return findProviderByIdOrThrow(id).getReferrals();
+    }
+
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public Provider createProvider(@Validated @RequestBody ProviderDto providerDto) {
@@ -56,7 +62,12 @@ public class ProviderController {
     @DeleteMapping("/{id}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void deleteProvider(@PathVariable("id") Long id) {
-        providerRepository.delete(findProviderByIdOrThrow(id));
+        Provider provider = findProviderByIdOrThrow(id);
+        if (provider.getReferrals().size() > 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Cannot delete Provider: provider has" + provider.getReferrals().size() + "assigned referrals");
+        }
+        providerRepository.delete(provider);
     }
 
     private Speciality findSpecialityByIdOrThrow(Long id) {
