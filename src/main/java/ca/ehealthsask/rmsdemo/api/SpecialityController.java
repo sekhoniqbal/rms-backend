@@ -19,6 +19,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import ca.ehealthsask.rmsdemo.dtos.SpecialityDto;
 import ca.ehealthsask.rmsdemo.entities.Provider;
+import ca.ehealthsask.rmsdemo.entities.Referral;
 import ca.ehealthsask.rmsdemo.entities.Speciality;
 import ca.ehealthsask.rmsdemo.repositories.ProviderRepository;
 import ca.ehealthsask.rmsdemo.repositories.SpecialityRepository;
@@ -43,17 +44,24 @@ public class SpecialityController {
         return findSpecialityByIdOrThrow(id);
     }
 
-    @GetMapping("/{id}/suggestProvider")
-    public List<Provider> getsuggestProviders(@PathVariable("id") Long id) {
-        Speciality speciality = findSpecialityByIdOrThrow(id);
-        List<Provider> providers = providerRepository.findAllBySpecialityId(speciality.getId())
+    @GetMapping("/{id}/referrals")
+    public List<Referral> getSpecialityReferrals(@PathVariable("id") Long id) {
+        return findSpecialityByIdOrThrow(id).getReferrals();
+    }
+
+    @GetMapping("/{id}/providers")
+    public List<Provider> getSpecialityProviders(@PathVariable("id") Long id) {
+        return findSpecialityByIdOrThrow(id).getProviders();
+    }
+
+    @GetMapping("/{id}/suggestedProvider")
+    public Provider getsuggestProviders(@PathVariable("id") Long id) {
+        return findSpecialityByIdOrThrow(id).getProviders()
                 .stream()
                 .filter(provider -> provider.getIsAcceptingPatients() != null)
                 .filter(provider -> provider.getIsAcceptingPatients() == true)
                 .sorted((provider1, provider2) -> provider1.getReferrals().size() - provider2.getReferrals().size())
-                .limit(3).collect(Collectors.toList());
-        providers.forEach(p -> System.out.println(p.getReferrals().size()));
-        return providers;
+                .findFirst().orElseThrow(null);
     }
 
     @PostMapping("")
@@ -71,7 +79,18 @@ public class SpecialityController {
     @DeleteMapping("/{id}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void deleteSpeciality(@PathVariable("id") Long id) {
-        specialityRepository.delete(findSpecialityByIdOrThrow(id));
+        Speciality speciality = findSpecialityByIdOrThrow(id);
+        if (speciality.getProviders().size() > 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Cannot delete Speciality: Speciality is assigned to " + speciality.getProviders().size()
+                            + " providers");
+        }
+        if (speciality.getReferrals().size() > 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "Cannot delete Speciality: Speciality is assigned to" + speciality.getReferrals().size()
+                            + " referrals");
+        }
+        specialityRepository.delete(speciality);
     }
 
     // helpers
