@@ -75,16 +75,33 @@ public class ReferralController {
 
         // helpers
         private Referral updateAndSave(Referral referral, ReferralDto referralDto) {
+                // throw error if patient not found
                 Patient patient = patientRepository.findById(referralDto.getPatientId())
                                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
                                                 "Patient Not Found"));
+                // throw error if patient already has another referral for the same speciality
+                Referral existingReferral = patient.getReferrals().stream()
+                                .filter(r -> r.getSpeciality().getId() == referralDto.getSpecialityId())
+                                .findFirst().orElse(null);
+                if (existingReferral != null && existingReferral.getId() != referral.getId()) {
+                        throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                                        "Patient already has an existing refferal for this speciality");
+                }
+                // throw error if provider does not exist
                 Provider provider = providerRepository.findById(referralDto.getProviderId())
                                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
                                                 "Provider Not Found"));
+                // throw error if provider is not accepting patients
+                if (provider.getIsAcceptingPatients() == null || provider.getIsAcceptingPatients() == false) {
+                        throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                                        "Selected provider is not selecting new patients");
+                }
+
+                // thorw error if speciality does not exist
                 Speciality speciality = specialityRepository.findById(referralDto.getSpecialityId())
                                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
                                                 "Speciality Not Found"));
-
+                // throw error if patient and speciality miss match
                 if (provider.getSpeciality().getId() != speciality.getId()) {
                         throw new ResponseStatusException(HttpStatus.NOT_FOUND,
                                         "Provider and Referral speciality miss match");
